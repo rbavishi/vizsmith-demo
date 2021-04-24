@@ -1,0 +1,10 @@
+ipython==7.20.0
+ipywidgets==7.6.3
+pandas==1.2.4
+seaborn==0.11.1
+gensim==4.0.1
+tqdm==4.60.0
+nltk==3.6.2
+whoosh==2.7.4
+pebble==4.6.1
+astunparse==1.6.3

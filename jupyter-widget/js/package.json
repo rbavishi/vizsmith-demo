@@ -1,0 +1,41 @@
+{
+  "name": "viz_synthesis_widget",
+  "version": "0.1.0",
+  "description": "Visualization Widget",
+  "author": "Anonymous Authors",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vizsmithase2021anonymous/demo"
+  },
+  "keywords": [
+    "jupyter",
+    "widgets",
+    "ipython",
+    "ipywidgets"
+  ],
+  "files": [
+    "lib/**/*.js",
+    "dist/*.js"
+  ],
+  "scripts": {
+    "clean": "rimraf dist/",
+    "prepare": "webpack",
+    "watch": "watch 'npm run prepare' lib/",
+    "test": "echo \"Error: no test specified toto\""
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.18.2",
+    "watch": "^1.0.2",
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {
+    "@jupyter-widgets/base": "^1.0.0",
+    "d3": "^4.10.2",
+    "lodash": "^4.17.4",
+    "magnific-popup": "^1.1.0"
+  }
+}

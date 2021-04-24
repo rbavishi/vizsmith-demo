@@ -1,0 +1,5 @@
+{
+    "load_extensions": {
+      "viz_synthesis_widget/extension": true
+    }
+  }

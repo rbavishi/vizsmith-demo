@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+cd jupyter-widget
+cd js
+npm install
+cd ..
+pip install .
