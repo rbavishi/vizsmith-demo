@@ -244,8 +244,13 @@ class WhooshNLPlusCodeSearcher(BaseSearcher):
             new_body.append(i)
 
         a.body = new_body[:]
+        allowed = set()
+        for n in ast.walk(a):
+            if isinstance(n, ast.Call):
+                allowed.add(n.func)
+
         for i in ast.walk(a):
-            if isinstance(i, ast.Name):
+            if isinstance(i, ast.Name) and i not in allowed:
                 i.id = "_"
 
         return astunparse.unparse(a)

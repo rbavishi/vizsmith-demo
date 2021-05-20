@@ -106,17 +106,17 @@ def check_rules(fig):
 
             if isinstance(o, mpl.axis.XTick):
                 for t in o.findobj(mpl.text.Text):
-                    if t.get_visible():
+                    if t.get_visible() and t.get_text():
                         txts['xticks'].append(t)
 
             if isinstance(o, mpl.axis.YTick):
                 for t in o.findobj(mpl.text.Text):
-                    if t.get_visible():
+                    if t.get_visible() and t.get_text():
                         txts['yticks'].append(t)
 
             if isinstance(o, mpl.legend.Legend):
                 for t in o.findobj(mpl.text.Text):
-                    if t.get_visible():
+                    if t.get_visible() and t.get_text():
                         txts['legend'].append(t)
 
         for t in itertools.chain(txts['xticks'], txts['yticks'], txts['legend']):
@@ -259,6 +259,7 @@ class App:
     _current_task: SynthesisTask = attr.ib(init=False, default=None)
     _results: List[Dict] = attr.ib(init=False, factory=list)
     _seen_figures: Dict[str, int] = attr.ib(init=False, factory=dict)
+    _idx_ctr: int = attr.ib(init=False, default=0)
 
     _cancel_button = attr.ib(init=False)
 
@@ -339,7 +340,8 @@ class App:
                     item['code_html'].append(i['code_html'])
 
             else:
-                idx = len(self._results)
+                idx = self._idx_ctr
+                self._idx_ctr += 1
                 self._seen_figures[i['png']] = idx
                 self._results.append({
                     **i,
