@@ -249,7 +249,7 @@ class App:
 
     #  Zoom bar for tiled visualization display
     _per_page_zoom_slider = attr.ib(init=False)
-    _zoom_level: int = attr.ib(init=False, default=3)
+    _zoom_level: int = attr.ib(init=False, default=5)
 
     #  Main display widget for visualizations
     _status = attr.ib(init=False)
