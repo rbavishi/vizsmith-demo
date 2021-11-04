@@ -30,7 +30,7 @@ class VizSynthesisWidget(widgets.DOMWidget):
 
     def clear(self):
         self.data = []
-        self.num_cols = 3
+        self.num_cols = 5
         self.selection = -1
 
     def set_selection_callback(self, callback):

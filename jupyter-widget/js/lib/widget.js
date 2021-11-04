@@ -141,7 +141,7 @@ var VizSynthesisWidgetModel = widgets.DOMWidgetModel.extend({
         _model_module_version : '^0.1.0',
         _view_module_version : '^0.1.0',
         data: [],
-        num_cols: 3,
+        num_cols: 5,
 		selection: -1,
     })
 });
